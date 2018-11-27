@@ -1,0 +1,11 @@
+count = list(map(int,raw_input().strip().split()))
+m = count[0]
+n = count[1]
+Arr = list(map(int,raw_input().strip().split()))
+A = set(map(int,raw_input().strip().split()))
+B = set(map(int,raw_input().strip().split()))
+sandy = 0
+for i in Arr:
+    if i in A : sandy = sandy + 1
+    elif i in B : sandy = sandy - 1
+print sandy
