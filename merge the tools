@@ -1,0 +1,24 @@
+def split_by_size(string, k):
+    # your code goes here
+  res = []
+  for i in xrange(len(string)/k):
+    res.append(string[i*k:(i+1)*k])
+  return res
+
+def remore_repetitions(string):
+  d = {}
+  res = []
+  for c in string:
+    if c not in d:
+      res.append(c)
+      d[c]=1
+  return ''.join(res)
+
+def merge_the_tools(string, k):
+  lines = split_by_size(string, k)
+  for l in lines:
+    print remore_repetitions(l)
+
+string, k = raw_input(), int(raw_input())
+merge_the_tools(string, k)
+if __name__ == '__main__':
