@@ -1,0 +1,17 @@
+import collections
+
+n = int(raw_input())
+
+b = collections.OrderedDict()
+
+for i in range(n):
+    word = raw_input()
+    if word in b:
+        b[word] += 1
+    else:
+        b[word] = 1
+
+print len(b)
+
+for key, value in b.iteritems():
+    print value,
