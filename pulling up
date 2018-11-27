@@ -1,0 +1,18 @@
+from collections import deque
+t = int(input())
+for _ in range(t):
+    _ = input()
+    cube_sizes = deque(int(x) for x in input().split())
+    base = max(cube_sizes[0], cube_sizes[-1])
+    while len(cube_sizes)>0:
+        if cube_sizes[-1]>=cube_sizes[0]:
+            this = cube_sizes.pop()
+        else:
+            this = cube_sizes.popleft()
+        if this > base:
+            print('No')
+            break
+        else:
+            base = this
+    else:
+        print('Yes')
